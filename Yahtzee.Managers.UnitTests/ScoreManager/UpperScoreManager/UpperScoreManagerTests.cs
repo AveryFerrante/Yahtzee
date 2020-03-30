@@ -13,7 +13,15 @@ namespace Yahtzee.Managers.UnitTests.ScoreManager.UpperScoreManager
         public void UpperScoreManager_AddScoring_UpdatesScoreCorrectly()
         {
             var expectedScore = 10;
-            var manager = CreateMockUpperScoreManager(expectedScore);
+            var mockCaluclator = new Mock<IScoreCategoryCalculator>();
+            mockCaluclator.Setup(c => c.CalculateScore(It.IsAny<DiceSet>()))
+                .Returns(expectedScore);
+
+            var mockResolver = new Mock<IScoreCategoryCalculatorResolver>();
+            mockResolver.Setup(r => r.Resolve(It.IsAny<ScoreCategories>()))
+                .Returns(mockCaluclator.Object);
+
+            var manager = new Managers.ScoreManager.UpperScoreManager.UpperScoreManager(mockResolver.Object);
 
             manager.AddScoring(ScoreCategories.Aces, DiceSet.Create(new int[] { 1, 2, 3, 4, 5 }));
 
@@ -22,15 +30,13 @@ namespace Yahtzee.Managers.UnitTests.ScoreManager.UpperScoreManager
 
         private IUpperScoreManager CreateMockUpperScoreManager(int mockedScoreReturn)
         {
+            var mockCaluclator = new Mock<IScoreCategoryCalculator>();
+            mockCaluclator.Setup(c => c.CalculateScore(It.IsAny<DiceSet>()))
+                .Returns(mockedScoreReturn);
+
             var mockResolver = new Mock<IScoreCategoryCalculatorResolver>();
             mockResolver.Setup(r => r.Resolve(It.IsAny<ScoreCategories>()))
-                .Returns<IScoreCategoryCalculator>(_ =>
-                {
-                    var mockCaluclator = new Mock<IScoreCategoryCalculator>();
-                    mockCaluclator.Setup(c => c.CalculateScore(It.IsAny<DiceSet>()))
-                        .Returns(mockedScoreReturn);
-                    return mockCaluclator.Object;
-                });
+                .Returns(mockCaluclator.Object);
 
             return new Managers.ScoreManager.UpperScoreManager.UpperScoreManager(mockResolver.Object);
         }
