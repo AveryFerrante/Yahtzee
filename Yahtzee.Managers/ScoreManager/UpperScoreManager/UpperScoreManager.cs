@@ -30,7 +30,7 @@ namespace Yahtzee.Managers.ScoreManager.UpperScoreManager
         public void AddScoring(ScoreCategories category, DiceSet diceSet)
         {
             IScoreCategoryCalculator scoreCalculator = _scoreCalculatorResolver.Resolve(category);
-            Score += scoreCalculator.CalculateScore(diceSet);
+            Score += scoreCalculator.Calculate(diceSet);
             _scoredCategories.Add(category);
         }
 

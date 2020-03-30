@@ -5,15 +5,25 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yahtzee.Core", "Yahtzee.Core\Yahtzee.Core.csproj", "{9CFD4050-6690-443B-9F7A-BA3D511D199C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee.Managers", "Yahtzee.Managers\Yahtzee.Managers.csproj", "{31CC65E3-B7A3-4EEA-8C99-A0014772C5A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yahtzee.Managers", "Yahtzee.Managers\Yahtzee.Managers.csproj", "{31CC65E3-B7A3-4EEA-8C99-A0014772C5A9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4B73FE23-A4A8-4A9E-93D0-FA18A62A0C16}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{6C434721-E059-4A5E-AB6D-6CF3D0CD2E42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee.Managers.UnitTests", "Yahtzee.Managers.UnitTests\Yahtzee.Managers.UnitTests.csproj", "{0BE7276A-44CA-4AB0-808F-951F26C5B3A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yahtzee.Managers.UnitTests", "Yahtzee.Managers.UnitTests\Yahtzee.Managers.UnitTests.csproj", "{0BE7276A-44CA-4AB0-808F-951F26C5B3A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee.Core.UnitTests", "Yahtzee.Core.UnitTests\Yahtzee.Core.UnitTests.csproj", "{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yahtzee.Core.UnitTests", "Yahtzee.Core.UnitTests\Yahtzee.Core.UnitTests.csproj", "{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee.ScoreCalculators.UnitTests", "Yahtzee.ScoreCalculators.UnitTests\Yahtzee.ScoreCalculators.UnitTests.csproj", "{344A9321-B23C-44E1-B18A-3FB993FFC0C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee.ScoreValidators.UnitTests", "Yahtzee.ScoreValidators.UnitTests\Yahtzee.ScoreValidators.UnitTests.csproj", "{0781D06B-1A55-46C8-BFD0-AF923260C463}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{B1CE5636-C9FC-4262-B9AD-E2E3ACCD605F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{6DFC83A8-1FBA-4BB7-8923-C42AA82C723C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee.ScoreCalculators.IntegrationTests", "Yahtzee.ScoreCalculators.IntegrationTests\Yahtzee.ScoreCalculators.IntegrationTests.csproj", "{A5FC47B7-AFAE-4B9D-967F-BCC3AD263260}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +47,18 @@ Global
 		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{344A9321-B23C-44E1-B18A-3FB993FFC0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{344A9321-B23C-44E1-B18A-3FB993FFC0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{344A9321-B23C-44E1-B18A-3FB993FFC0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{344A9321-B23C-44E1-B18A-3FB993FFC0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0781D06B-1A55-46C8-BFD0-AF923260C463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0781D06B-1A55-46C8-BFD0-AF923260C463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0781D06B-1A55-46C8-BFD0-AF923260C463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0781D06B-1A55-46C8-BFD0-AF923260C463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5FC47B7-AFAE-4B9D-967F-BCC3AD263260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5FC47B7-AFAE-4B9D-967F-BCC3AD263260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5FC47B7-AFAE-4B9D-967F-BCC3AD263260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5FC47B7-AFAE-4B9D-967F-BCC3AD263260}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,8 +66,13 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9CFD4050-6690-443B-9F7A-BA3D511D199C} = {6C434721-E059-4A5E-AB6D-6CF3D0CD2E42}
 		{31CC65E3-B7A3-4EEA-8C99-A0014772C5A9} = {6C434721-E059-4A5E-AB6D-6CF3D0CD2E42}
-		{0BE7276A-44CA-4AB0-808F-951F26C5B3A3} = {4B73FE23-A4A8-4A9E-93D0-FA18A62A0C16}
-		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B} = {4B73FE23-A4A8-4A9E-93D0-FA18A62A0C16}
+		{0BE7276A-44CA-4AB0-808F-951F26C5B3A3} = {B1CE5636-C9FC-4262-B9AD-E2E3ACCD605F}
+		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B} = {B1CE5636-C9FC-4262-B9AD-E2E3ACCD605F}
+		{344A9321-B23C-44E1-B18A-3FB993FFC0C0} = {B1CE5636-C9FC-4262-B9AD-E2E3ACCD605F}
+		{0781D06B-1A55-46C8-BFD0-AF923260C463} = {B1CE5636-C9FC-4262-B9AD-E2E3ACCD605F}
+		{B1CE5636-C9FC-4262-B9AD-E2E3ACCD605F} = {4B73FE23-A4A8-4A9E-93D0-FA18A62A0C16}
+		{6DFC83A8-1FBA-4BB7-8923-C42AA82C723C} = {4B73FE23-A4A8-4A9E-93D0-FA18A62A0C16}
+		{A5FC47B7-AFAE-4B9D-967F-BCC3AD263260} = {6DFC83A8-1FBA-4BB7-8923-C42AA82C723C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EAFB2C3-3C63-467E-BD5A-2881BDE73842}

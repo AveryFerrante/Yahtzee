@@ -14,7 +14,7 @@ namespace Yahtzee.Managers.ScoreManager.UpperScoreManager.ScoreCalculators
             Type = ScoreCategories.Twos;
         }
 
-        public int CalculateScore(DiceSet diceSet)
+        public int Calculate(DiceSet diceSet)
         {
             return diceSet.Values.Where(v => v == 2).Sum();
         }

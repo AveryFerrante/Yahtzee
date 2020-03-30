@@ -16,7 +16,7 @@ namespace Yahtzee.Managers.ScoreManager.LowerScoreManager.ScoreCalculators
             _validatorResolver = resolver;
         }
 
-        public int CalculateScore(DiceSet diceSet)
+        public int Calculate(DiceSet diceSet)
         {
             var validator = _validatorResolver.Resolve(Type);
             return validator.MeetsRequirements(diceSet)
