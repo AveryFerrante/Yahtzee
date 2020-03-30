@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yahtzee.Core", "Yahtzee.Core\Yahtzee.Core.csproj", "{9CFD4050-6690-443B-9F7A-BA3D511D199C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee.Managers", "Yahtzee.Managers\Yahtzee.Managers.csproj", "{31CC65E3-B7A3-4EEA-8C99-A0014772C5A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4B73FE23-A4A8-4A9E-93D0-FA18A62A0C16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{6C434721-E059-4A5E-AB6D-6CF3D0CD2E42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee.Managers.UnitTests", "Yahtzee.Managers.UnitTests\Yahtzee.Managers.UnitTests.csproj", "{0BE7276A-44CA-4AB0-808F-951F26C5B3A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahtzee.Core.UnitTests", "Yahtzee.Core.UnitTests\Yahtzee.Core.UnitTests.csproj", "{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CFD4050-6690-443B-9F7A-BA3D511D199C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CFD4050-6690-443B-9F7A-BA3D511D199C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CFD4050-6690-443B-9F7A-BA3D511D199C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CFD4050-6690-443B-9F7A-BA3D511D199C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31CC65E3-B7A3-4EEA-8C99-A0014772C5A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31CC65E3-B7A3-4EEA-8C99-A0014772C5A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31CC65E3-B7A3-4EEA-8C99-A0014772C5A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31CC65E3-B7A3-4EEA-8C99-A0014772C5A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE7276A-44CA-4AB0-808F-951F26C5B3A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE7276A-44CA-4AB0-808F-951F26C5B3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE7276A-44CA-4AB0-808F-951F26C5B3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE7276A-44CA-4AB0-808F-951F26C5B3A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9CFD4050-6690-443B-9F7A-BA3D511D199C} = {6C434721-E059-4A5E-AB6D-6CF3D0CD2E42}
+		{31CC65E3-B7A3-4EEA-8C99-A0014772C5A9} = {6C434721-E059-4A5E-AB6D-6CF3D0CD2E42}
+		{0BE7276A-44CA-4AB0-808F-951F26C5B3A3} = {4B73FE23-A4A8-4A9E-93D0-FA18A62A0C16}
+		{06D3BD0D-5D71-4214-AFAA-E3301BF0ED8B} = {4B73FE23-A4A8-4A9E-93D0-FA18A62A0C16}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EAFB2C3-3C63-467E-BD5A-2881BDE73842}
+	EndGlobalSection
+EndGlobal
