@@ -7,23 +7,31 @@ namespace Yahtzee.Managers.ScoreManager.LowerScoreManager.ScoreCalculators
 {
     public class FullHouseScoreCalculator : IScoreCategoryCalculator
     {
-        private IScoreCategoryValidatorResolver _validatorResolver;
         public ScoreCategories Type { get; private set; }
 
 
-        public FullHouseScoreCalculator(IScoreCategoryValidatorResolver validatorResolver)
+        public FullHouseScoreCalculator()
         {
             Type = ScoreCategories.FullHouse;
-            _validatorResolver = validatorResolver;
         }
 
 
         public int Calculate(DiceSet diceSet)
         {
-            var validator = _validatorResolver.Resolve(Type);
-            return validator.MeetsRequirements(diceSet)
+            return MeetsRequirements(diceSet)
                 ? diceSet.Values.Sum()
                 : 0;
+        }
+
+        private bool MeetsRequirements(DiceSet diceSet)
+        {
+            var groupedResults = diceSet.Values
+                .GroupBy(v => v)
+                .Select(group => new { group.Key, Count = group.Count() });
+
+            return groupedResults.Count() == 2
+                && groupedResults.Any(g => g.Count == 3)
+                && groupedResults.Any(g => g.Count == 2);
         }
     }
 }

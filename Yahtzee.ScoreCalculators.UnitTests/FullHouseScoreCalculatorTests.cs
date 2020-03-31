@@ -13,11 +13,10 @@ namespace Yahtzee.ScoreCalculators.UnitTests
         public void FullHouseScoreCalculator_GivenFullHouse_ReturnsCorrectScore()
         {
             var diceSet = DiceSet.Create(new int[] { 2, 2, 3, 3, 3 });
-            var mockResolver = GetMockResolverWithValidatorThatReturns(true);
             var expected = 13;
             
 
-            var calculator = new FullHouseScoreCalculator(mockResolver.Object);
+            var calculator = new FullHouseScoreCalculator();
             var result = calculator.Calculate(diceSet);
 
             Assert.Equal(expected, result);
@@ -26,26 +25,13 @@ namespace Yahtzee.ScoreCalculators.UnitTests
         [Fact]
         public void FullHouseScoreCalculator_NotGivenFullHouse_ReturnsZero()
         {
-            var diceSet = DiceSet.Create(new int[] { 2, 2, 3, 3, 3 });
-            var mockResolver = GetMockResolverWithValidatorThatReturns(false);
+            var diceSet = DiceSet.Create(new int[] { 5, 1, 3, 3, 3 });
             var expected = 0;
 
-            var calculator = new FullHouseScoreCalculator(mockResolver.Object);
+            var calculator = new FullHouseScoreCalculator();
             var result = calculator.Calculate(diceSet);
 
             Assert.Equal(expected, result);
-        }
-
-        private static Mock<IScoreCategoryValidatorResolver> GetMockResolverWithValidatorThatReturns(bool returnValue)
-        {
-            Mock<IScoreCategoryValidator> mockValidator = new Mock<IScoreCategoryValidator>();
-            mockValidator.Setup(v => v.MeetsRequirements(It.IsAny<DiceSet>()))
-                .Returns(returnValue);
-
-            Mock<IScoreCategoryValidatorResolver> mockResolver = new Mock<IScoreCategoryValidatorResolver>();
-            mockResolver.Setup(r => r.Resolve(It.IsAny<ScoreCategories>()))
-                .Returns(mockValidator.Object);
-            return mockResolver;
         }
     }
 }

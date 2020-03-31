@@ -8,20 +8,25 @@ namespace Yahtzee.Managers.ScoreManager.LowerScoreManager.ScoreCalculators
     public class ThreeOfAKindScoreCalculator : IScoreCategoryCalculator
     {
         public ScoreCategories Type { get; private set; }
-        private IScoreCategoryValidatorResolver _validatorResolver { get; set; }
 
-        public ThreeOfAKindScoreCalculator(IScoreCategoryValidatorResolver resolver)
+        public ThreeOfAKindScoreCalculator()
         {
             Type = ScoreCategories.ThreeOfAKind;
-            _validatorResolver = resolver;
         }
 
         public int Calculate(DiceSet diceSet)
         {
-            var validator = _validatorResolver.Resolve(Type);
-            return validator.MeetsRequirements(diceSet)
+            return MeetsRequirements(diceSet)
                 ? diceSet.Values.Sum()
                 : 0;
+        }
+
+        private bool MeetsRequirements(DiceSet diceSet)
+        {
+            return diceSet.Values
+                .GroupBy(v => v)
+                .Select(group => new { group.Key, Count = group.Count() })
+                .Any(group => group.Count >= 3);
         }
     }
 }

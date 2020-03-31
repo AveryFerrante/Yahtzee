@@ -16,4 +16,10 @@
         Chance,
         Yahtzee
     }
+
+    public enum ScoreSections
+    {
+        Upper,
+        Lower
+    }
 }

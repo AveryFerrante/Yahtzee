@@ -1,28 +1,43 @@
-﻿using Moq;
-using Xunit;
-using Yahtzee.Core.Enums;
-using Yahtzee.Core.Interfaces;
-using Yahtzee.Core.ValueObjects;
+﻿using Xunit;
+using Yahtzee.Managers.ScoreManager.UpperScoreManager;
+using Yahtzee.Managers.ScoreManager.UpperScoreManager.Interfaces;
 
 namespace Yahtzee.Managers.UnitTests.ScoreManagers
 {
     public class UpperScoreManagerTests
     {
         [Fact]
-        public void Test1()
+        public void UpperScoreManager_WithScoreLessThanBonusRequirements_ReturnsScoreWithoutBonusPoints()
         {
-            Mock<IScoreCategoryCalculator> mockCalculator = new Mock<IScoreCategoryCalculator>();
-            mockCalculator.Setup(c => c.Calculate(It.IsAny<DiceSet>()))
-                .Returns(100);
+            IUpperScoreManager manager = new UpperScoreManager();
+            var expected = 45;
 
-            Mock<IScoreCategoryCalculatorResolver> mockResolver = new Mock<IScoreCategoryCalculatorResolver>();
-            mockResolver.Setup(r => r.Resolve(It.IsAny<ScoreCategories>()))
-                .Returns(mockCalculator.Object);
+            manager.AddToScore(expected);
 
-            var manager = new ScoreManager.UpperScoreManager.UpperScoreManager(mockResolver.Object);
-            manager.AddScoring(ScoreCategories.Aces, DiceSet.Create(new int[] { 1, 1, 1, 1, 1 }));
+            Assert.Equal(expected, manager.CurrentScore);
+        }
 
-            Assert.Equal(100, manager.Score);
+        [Fact]
+        public void UpperScoreManager_WithScoreOverBonusRequirements_ReturnsTrueForBonusEligible()
+        {
+            IUpperScoreManager manager = new UpperScoreManager();
+            var score = 70;
+
+            manager.AddToScore(score);
+
+            Assert.True(manager.IsBonusEligable);
+        }
+
+        [Fact]
+        public void UpperScoreManager_WithScoreOverBonusRequirements_ReturnsScoreWithBonusPoints()
+        {
+            IUpperScoreManager manager = new UpperScoreManager();
+            var score = 70;
+            var expected = 70 + 35;
+
+            manager.AddToScore(score);
+
+            Assert.Equal(expected, manager.CurrentScore);
         }
     }
 }

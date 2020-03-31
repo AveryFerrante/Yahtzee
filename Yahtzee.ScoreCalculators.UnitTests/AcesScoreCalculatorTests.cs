@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
+﻿using Xunit;
 using Yahtzee.Core.Interfaces;
 using Yahtzee.Core.ValueObjects;
 using Yahtzee.Managers.ScoreManager.UpperScoreManager.ScoreCalculators;
